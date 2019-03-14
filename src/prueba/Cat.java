@@ -4,10 +4,10 @@ package prueba;
 
 public class Cat extends Pet{
     private boolean isHunter;
-    public Cat(boolean isHunter, String id, String name, String haircolor) {
+    public Cat(String id, String name, String haircolor,boolean isHunter) {
         super(id, name, haircolor);
         this.isHunter = isHunter;
-        setType("Gato");
+        this.type="Cat";
     }
 
     public boolean isIsHunter() {
@@ -23,5 +23,10 @@ public class Cat extends Pet{
     @Override
     String sound(){
     return "miau ";}
+    
+    @Override
+    public String toString() {
+        return "type: " + type + "id: " + id + ", name: " + name + ", haircolor: " + haircolor + ", isHunter: " + isHunter ;
+    }
     
 }

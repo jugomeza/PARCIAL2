@@ -1,0 +1,1 @@
+Dog, 1, Snutsipu, gris, terrier

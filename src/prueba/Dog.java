@@ -12,12 +12,11 @@ package prueba;
 public class Dog extends Pet {
 
     private String breed;
-    public Dog(){}
-
-    public Dog(String breed, String id, String name, String haircolor) {
+   
+    public Dog(String id, String name, String haircolor,String breed) {
         super(id, name, haircolor);
         this.breed = breed;
-        setType("Perro");
+        this.type="Dog";
     }
 
     public String getBreed() {
@@ -33,6 +32,13 @@ public class Dog extends Pet {
     @Override 
     public String sound(){
     return "guau";}
+
+  
+
+    @Override
+    public String toString() {
+        return "type: " + type + ", id: " + id + ", name: " + name + ", haircolor: " + haircolor + ", breed: " + breed ;
+    }
     
     
     

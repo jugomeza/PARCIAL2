@@ -2,11 +2,11 @@
 package prueba;
 
 public abstract class Pet {
-    private String id;
-    private String name;
-    private String haircolor;
-    private String type;
-    public Pet(){
+    protected String id;
+    protected String name;
+    protected String haircolor;
+    protected String type;
+    protected Pet(){
     }
 
     public Pet(String id, String name, String haircolor) {
@@ -51,5 +51,8 @@ public abstract class Pet {
     
     
     abstract String sound();
+
+   
+    
     
 }
