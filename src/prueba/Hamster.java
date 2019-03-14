@@ -8,6 +8,7 @@ public class Hamster extends Pet {
         super(id, name, haircolor);
         this.weight = weight;
         this.type = "Hamster";
+        this.fact = String.valueOf(weight);
     }
 
     public double getWeight() {
@@ -24,7 +25,7 @@ public class Hamster extends Pet {
 
      @Override
     public String toString() {
-        return "type: " + type + "id: " + id + ", name: " + name + ", haircolor: " + haircolor + ", weight: " + weight;
+        return "type: " + type + ", id: " + id + ", name: " + name + ", haircolor: " + haircolor + ", weight: " + weight;
     }
     
 }

@@ -15,8 +15,22 @@ public class GestionArchivos {
         try {
             flwriter = new FileWriter("almacen.txt");
             BufferedWriter bfwriter = new BufferedWriter(flwriter);
-            for (Pet mascota : lista) {
-                bfwriter.write(mascota.getId() + ", " + mascota.getName() + ", " + mascota.getHaircolor() + "\n");
+            for (Pet p : lista) {
+                switch (p.getType()) {
+                    case "Cat":
+                        bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+"\n");
+                        break;
+                    case "Dog":
+                        bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+"\n");
+                        break;
+                    
+                    case "Hamster":
+                       bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+"\n");
+                        break;
+                    default:
+                        break;
+                }
+                
             }
             bfwriter.close();
             System.out.println("Archivo creado ok");

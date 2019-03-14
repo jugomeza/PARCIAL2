@@ -17,6 +17,7 @@ public class Dog extends Pet {
         super(id, name, haircolor);
         this.breed = breed;
         this.type="Dog";
+        this.fact = breed; 
     }
 
     public String getBreed() {

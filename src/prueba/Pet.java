@@ -6,6 +6,7 @@ public abstract class Pet {
     protected String name;
     protected String haircolor;
     protected String type;
+     protected String fact;
     protected Pet(){
     }
 
@@ -14,6 +15,7 @@ public abstract class Pet {
         this.name = name;
         this.haircolor = haircolor;
         this.type = " ";
+   
         
     }
 
@@ -47,6 +49,14 @@ public abstract class Pet {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getFact() {
+        return fact;
+    }
+
+    public void setFact(String fact) {
+        this.fact = fact;
     }
     
     

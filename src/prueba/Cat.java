@@ -8,6 +8,7 @@ public class Cat extends Pet{
         super(id, name, haircolor);
         this.isHunter = isHunter;
         this.type="Cat";
+        this.fact = String.valueOf(isHunter);
     }
 
     public boolean isIsHunter() {
@@ -26,7 +27,7 @@ public class Cat extends Pet{
     
     @Override
     public String toString() {
-        return "type: " + type + "id: " + id + ", name: " + name + ", haircolor: " + haircolor + ", isHunter: " + isHunter ;
+        return "type: " + type + ", id: " + id + ", name: " + name + ", haircolor: " + haircolor + ", isHunter: " + isHunter ;
     }
     
 }
