@@ -1,1 +1,3 @@
-Dog, 1, Snutsipu, gris, terrier
+Dog, x, Daniel, amarillo, labraduddle
+Cat, y, Kitty, negro, true
+Hamster, z, Oscar, naranja, 24.0
