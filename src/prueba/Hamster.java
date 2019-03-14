@@ -4,10 +4,10 @@ package prueba;
 public class Hamster extends Pet {
     private double weight;
 
-    public Hamster(double weight, String id, String name, String haircolor) {
+    public Hamster(String id, String name, String haircolor,double weight) {
         super(id, name, haircolor);
         this.weight = weight;
-        setType("Hamster");
+        this.type = "Hamster";
     }
 
     public double getWeight() {
@@ -21,6 +21,10 @@ public class Hamster extends Pet {
     String sound(){
     return " ";
     }
-    
+
+     @Override
+    public String toString() {
+        return "type: " + type + "id: " + id + ", name: " + name + ", haircolor: " + haircolor + ", weight: " + weight;
+    }
     
 }
