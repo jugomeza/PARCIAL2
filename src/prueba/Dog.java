@@ -13,8 +13,8 @@ public class Dog extends Pet {
 
     private String breed;
    
-    public Dog(String id, String name, String haircolor,String breed) {
-        super(id, name, haircolor);
+    public Dog(String id, String name, String haircolor,String breed, String idDueño,String nameDueño) {
+        super(id, name, haircolor, idDueño, nameDueño);
         this.breed = breed;
         this.type="Dog";
         this.fact = breed; 

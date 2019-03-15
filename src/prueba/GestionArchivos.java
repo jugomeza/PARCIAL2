@@ -10,22 +10,23 @@ import java.util.Scanner;
 
 public class GestionArchivos {
 
-    public static void crearArchivo(ArrayList<Pet> lista) {
+    public static void escribirArchivo(ArrayList<Pet> lista) {
         FileWriter flwriter = null;
         try {
             flwriter = new FileWriter("almacen.txt");
             BufferedWriter bfwriter = new BufferedWriter(flwriter);
             for (Pet p : lista) {
+    
                 switch (p.getType()) {
                     case "Cat":
-                        bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+"\n");
+                        bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+", "+p.getIdDueño()+", "+p.getNameDueño()+"\n");
                         break;
                     case "Dog":
-                        bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+"\n");
+                        bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+", "+p.getIdDueño()+", "+p.getNameDueño()+"\n");
                         break;
                     
                     case "Hamster":
-                       bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+"\n");
+                       bfwriter.write(p.getType()+", "+ p.getId() + ", " + p.getName() + ", " + p.getHaircolor() + ", " + String.valueOf(p.getFact())+", "+p.getIdDueño()+", "+p.getNameDueño()+"\n");
                         break;
                     default:
                         break;
@@ -48,7 +49,7 @@ public class GestionArchivos {
         }
     }
 
-    public static ArrayList leerArchivo(Vet v,File f) {
+    public static ArrayList leerArchivo(Vet v,Starter s,File f) {
         Scanner scanner;
         try {
             scanner = new Scanner(f);
@@ -56,19 +57,36 @@ public class GestionArchivos {
                 String linea = scanner.nextLine();
                 Scanner delimitar = new Scanner(linea);
                 delimitar.useDelimiter(", ");
-                switch (delimitar.next()) {
+//                System.out.println(delimitar.next());
+                String aux = "";
+                try{
+                   aux = delimitar.next();
+                }catch(Exception e){
+                    
+                }
+                
+                switch (aux) {
                     case "Cat":
-                        Cat a = new Cat(delimitar.next(), delimitar.next(), delimitar.next(), Boolean.parseBoolean(delimitar.next()));
-                        v.listaPets.add(a);
+                        Cat c = new Cat(delimitar.next(),delimitar.next(),delimitar.next(),Boolean.valueOf(delimitar.next()),delimitar.next(),delimitar.next());
+                       Person p1 = new Person(c.getIdDueño(),c.getNameDueño());
+                       s.listaPersonas.add(p1);
+                       p1.listaPets.add(c);
+                        v.listaPets.add(c);
                         break;
                     case "Dog":
-                        Dog b = new Dog(delimitar.next(), delimitar.next(), delimitar.next(), delimitar.next());
+                        Dog b = new Dog(delimitar.next(), delimitar.next(), delimitar.next(), delimitar.next(),delimitar.next(),delimitar.next());
+                       Person p2 = new Person(b.getIdDueño(),b.getNameDueño());
+                       s.listaPersonas.add(p2);
+                       p2.listaPets.add(b);
                         v.listaPets.add(b);
                         break;
                     
                     case "Hamster":
-                        Hamster c = new Hamster(delimitar.next(), delimitar.next(), delimitar.next(), Double.parseDouble(delimitar.next()));
-                        v.listaPets.add(c);
+                        Hamster h = new Hamster(delimitar.next(), delimitar.next(), delimitar.next(), Double.parseDouble(delimitar.next()),delimitar.next(),delimitar.next());
+                       Person p3 = new Person(h.getIdDueño(),h.getNameDueño());
+                       s.listaPersonas.add(p3);
+                       p3.listaPets.add(h);
+                        v.listaPets.add(h);
                         break;
                     default:
                         break;
@@ -77,32 +95,9 @@ public class GestionArchivos {
             }
             scanner.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+          //  e.printStackTrace();
         }
         return v.listaPets;
     }
-
-    public static void aniadirArchivo(ArrayList<Pet> lista) {
-        FileWriter flwriter = null;
-        try {
-            flwriter = new FileWriter("almacen.txt", true);
-            BufferedWriter bfwriter = new BufferedWriter(flwriter);
-            for (Pet mascota : lista) {
-                bfwriter.write("Codigo: " + mascota.getId() + ", nombre: " + mascota.getName() + ", color de pelo: " + mascota.getHaircolor() + "\n");
-            }
-            bfwriter.close();
-            System.out.println("Archivo modificado satisfactoriamente..");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (flwriter != null) {
-                try {
-                    flwriter.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 }
+

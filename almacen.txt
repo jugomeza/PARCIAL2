@@ -1,3 +1,10 @@
-Dog, x, Daniel, amarillo, labraduddle
-Cat, y, Kitty, negro, true
-Hamster, z, Oscar, naranja, 24.0
+Dog, aaaa, Oscar, negro, bauldog, qwew, Juan
+Cat, bbbb, Lucas, rojo, true, qwew, Juan
+Hamster, cccc, remit, cafe, 24.0, qwew, Juan
+Hamster, xxxx, remit, cafe, 24.0, qwew, Juan
+Cat, dddd, Red, gris, false, qwew, Juan
+Cat, eeee, Kitty1, amarillo, true, qrtt, Sara
+Cat, ffff, Kitty2, naranja, true, qrtt, Sara
+Hamster, llll, Kitty3, rojo, 23.6, qrts, Jose
+Hamster, gggg, Kitty3, rojo, 23.6, qrts, Jose
+Hamster, iiii, Kitty4, blanco, 24.5, qrst, Sara

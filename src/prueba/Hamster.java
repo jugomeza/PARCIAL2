@@ -4,8 +4,8 @@ package prueba;
 public class Hamster extends Pet {
     private double weight;
 
-    public Hamster(String id, String name, String haircolor,double weight) {
-        super(id, name, haircolor);
+    public Hamster(String id, String name, String haircolor,double weight,String idDueño, String nameDueño) {
+        super(id, name, haircolor,idDueño,nameDueño);
         this.weight = weight;
         this.type = "Hamster";
         this.fact = String.valueOf(weight);

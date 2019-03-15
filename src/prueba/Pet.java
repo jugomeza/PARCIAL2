@@ -7,14 +7,18 @@ public abstract class Pet {
     protected String haircolor;
     protected String type;
      protected String fact;
+     protected String idDueño; 
+     protected String nameDueño;
     protected Pet(){
     }
 
-    public Pet(String id, String name, String haircolor) {
+    public Pet(String id, String name, String haircolor, String idDueño, String nameDueño) {
         this.id = id;
         this.name = name;
         this.haircolor = haircolor;
         this.type = " ";
+        this.idDueño = idDueño;
+        this.nameDueño = nameDueño;
    
         
     }
@@ -58,6 +62,23 @@ public abstract class Pet {
     public void setFact(String fact) {
         this.fact = fact;
     }
+
+    public String getIdDueño() {
+        return idDueño;
+    }
+
+    public void setIdDueño(String idDueño) {
+        this.idDueño = idDueño;
+    }
+
+    public String getNameDueño() {
+        return nameDueño;
+    }
+
+    public void setNameDueño(String nameDueño) {
+        this.nameDueño = nameDueño;
+    }
+    
     
     
     abstract String sound();
